@@ -1,4 +1,5 @@
 let _ = require('lodash')
+
 let products = [
   {
     Name: 'Anzac Biscuit Family',
