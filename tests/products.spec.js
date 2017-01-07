@@ -5,7 +5,7 @@ var expect = require('chai').expect
 describe('[PRODUCTS]', () => {
   it('should get all products', (done) => {
     request(app)
-      .get('/products')
+      .get('/api/products')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
@@ -17,7 +17,6 @@ describe('[PRODUCTS]', () => {
   })
 
   it('should get a product', (done) => {
-
     const ciabattaLoaf = {
       Name: 'Ciabatta Loaf',
       Price: 4,
@@ -32,7 +31,7 @@ describe('[PRODUCTS]', () => {
     }
 
     request(app)
-    .get('/products/Ciabatta%20Loaf')
+    .get('/api/products/Ciabatta%20Loaf')
     .set('Accept', 'application/json')
     .expect('Content-Type', /json/)
     .expect(200)
