@@ -1,10 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+const productsRouter = require('./src/routes/products')
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
+
+app.use('/products', productsRouter)
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
